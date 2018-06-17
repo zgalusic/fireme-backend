@@ -9,7 +9,6 @@ import java.util.Objects;
 public class UsersEntity {
     private int id;
     private String username;
-    private String email;
     private String pass;
     private String position;
     private String section;
@@ -18,6 +17,7 @@ public class UsersEntity {
     private Timestamp lastUpdate;
     private String firstName;
     private String lastName;
+    private String eMail;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -52,16 +52,6 @@ public class UsersEntity {
     public int hashCode() {
 
         return Objects.hash(id, username);
-    }
-
-    @Basic
-    @Column(name = "email", nullable = true, length = 100)
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     @Basic
@@ -142,5 +132,15 @@ public class UsersEntity {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Basic
+    @Column(name = "e_mail", nullable = true, length = 100)
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
     }
 }
